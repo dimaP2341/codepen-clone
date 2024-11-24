@@ -3,7 +3,7 @@ const searchReducer = (state = '', action) => {
     case 'SET_SEARCH_TERM':
       return {
         ...state,
-        searchterm: action.payload,
+        searchTerm: action.payload,
       }
     case 'SET_SEARCH_TERM_EMPTY':
       return {

@@ -4,36 +4,32 @@ import { motion } from 'framer-motion'
 import { MdBookmark } from 'react-icons/md'
 
 export default function Projects() {
-  const projects = useSelector((state) => state.projects.projects)
-  const searchTerm = useSelector((state) => state.searchTerm.searchTerm || '')
-  const [filtered, setFiltered] = useState(null)
+  const projects = useSelector((state) => state.projects.projects || [])
+  const searchTerm = useSelector((state) => state.searchTerm.searchTerm || '') // Default to empty string if undefined
+  const [filtered, setFiltered] = useState([])
 
   useEffect(() => {
+    console.log('Search term:', searchTerm)
+    console.log('Projects:', projects)
+
     if (searchTerm?.length > 0) {
-      setFiltered(
-        projects?.filter((project) => {
-          const lowerCaseItem = project?.title.toLowerCase()
-          return searchTerm.split('').every((letter) => lowerCaseItem.includes(letter))
-        }),
-      )
+      const regex = new RegExp(searchTerm, 'i')
+      const filteredProjects = projects.filter((project) => {
+        const title = project?.title || ''
+        return regex.test(title)
+      })
+      console.log('Filtered Projects:', filteredProjects)
+      setFiltered(filteredProjects)
     } else {
-      setFiltered(null)
+      setFiltered(projects)
     }
   }, [searchTerm, projects])
 
   return (
     <div className="w-full py-6 flex items-center justify-center gap-6 flex-wrap">
-      {filtered ? (
-        <>
-          {filtered &&
-            filtered.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
-        </>
-      ) : (
-        <>
-          {projects &&
-            projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
-        </>
-      )}
+      {(filtered.length > 0 ? filtered : projects).map((project, index) => (
+        <ProjectCard key={project.id} project={project} index={index} />
+      ))}
     </div>
   )
 }
@@ -45,13 +41,9 @@ const ProjectCard = ({ project, index }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, delay: index * 0.3 }}
-      key={index}
       className="w-full cursor-pointer md:w-[450px] h-[375px] bg-gray-800 rounded-md p-4 flex flex-col items-center justify-center gap-4"
     >
-      <div
-        className="bg-gray-800 w-full h-full rounded-md overflow-hidden"
-        style={{ overflow: 'hidden', height: '100%' }}
-      >
+      <div className="bg-gray-800 w-full h-full rounded-md overflow-hidden">
         <iframe
           title="Result"
           srcDoc={project.output}

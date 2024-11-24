@@ -1,0 +1,98 @@
+[debug] [2024-11-24T18:21:07.863Z] ----------------------------------------------------------------------
+[debug] [2024-11-24T18:21:07.864Z] Command:       /Users/plotkindmyrto/.nvm/versions/node/v18.20.4/bin/node /Users/plotkindmyrto/.nvm/versions/node/v18.20.4/bin/firebase deploy
+[debug] [2024-11-24T18:21:07.865Z] CLI Version:   13.27.0
+[debug] [2024-11-24T18:21:07.865Z] Platform:      darwin
+[debug] [2024-11-24T18:21:07.865Z] Node Version:  v18.20.4
+[debug] [2024-11-24T18:21:07.869Z] Time:          Sun Nov 24 2024 20:21:07 GMT+0200 (Eastern European Standard Time)
+[debug] [2024-11-24T18:21:07.869Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-24T18:21:07.906Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-24T18:21:07.906Z] > authorizing via signed-in user (plotkin2016@gmail.com)
+[debug] [2024-11-24T18:21:07.907Z] [iam] checking project codepen-clone-2cbf1 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-11-24T18:21:07.907Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:07.907Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:07.908Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/codepen-clone-2cbf1:testIamPermissions [none]
+[debug] [2024-11-24T18:21:07.908Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/codepen-clone-2cbf1:testIamPermissions x-goog-quota-user=projects/codepen-clone-2cbf1
+[debug] [2024-11-24T18:21:07.908Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/codepen-clone-2cbf1:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-24T18:21:08.791Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/codepen-clone-2cbf1:testIamPermissions 200
+[debug] [2024-11-24T18:21:08.792Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/codepen-clone-2cbf1:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-24T18:21:08.792Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:08.792Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:08.793Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/codepen-clone-2cbf1 [none]
+[debug] [2024-11-24T18:21:09.141Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/codepen-clone-2cbf1 200
+[debug] [2024-11-24T18:21:09.141Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/codepen-clone-2cbf1 {"projectId":"codepen-clone-2cbf1","projectNumber":"1096754307149","displayName":"codepen-clone","name":"projects/codepen-clone-2cbf1","resources":{"hostingSite":"codepen-clone-2cbf1"},"state":"ACTIVE","etag":"1_7052f01b-b586-411b-ad65-de12ebb5fb07"}
+[info] 
+[info] === Deploying to 'codepen-clone-2cbf1'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-11-24T18:21:09.144Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:09.144Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:09.144Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/codepen-clone-2cbf1/versions [none]
+[debug] [2024-11-24T18:21:09.144Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/codepen-clone-2cbf1/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-11-24T18:21:10.472Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/codepen-clone-2cbf1/versions 200
+[debug] [2024-11-24T18:21:10.472Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/codepen-clone-2cbf1/versions {"name":"projects/1096754307149/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[codepen-clone-2cbf1]: beginning deploy... 
+[info] i  hosting[codepen-clone-2cbf1]: found 13 files in build 
+[debug] [2024-11-24T18:21:10.481Z] [hosting] uploading with 200 concurrency
+[debug] [2024-11-24T18:21:10.910Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:10.910Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:10.910Z] [hosting] hash cache [YnVpbGQ] stored for 13 files
+[debug] [2024-11-24T18:21:10.910Z] [hosting][hash queue][FINAL] {"max":425,"min":4,"avg":39.76923076923077,"active":0,"complete":13,"success":13,"errored":0,"retried":0,"total":13,"elapsed":428}
+[debug] [2024-11-24T18:21:10.911Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1096754307149/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9:populateFiles [none]
+[debug] [2024-11-24T18:21:10.911Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1096754307149/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9:populateFiles {"files":{"/robots.txt":"391d14b3c2f8c9143a27a28c7399585142228d4d1bdbe2c87ac946de411fa9a2","/asset-manifest.json":"3d1977d9c6c59f069c6bb1aa61169f92b0f4ca99c7f7de7b9e76ab4d15d03d1b","/logo192.png":"f66564670b5bfe49f3f04a5b63107bae60f4a7736f1d3b83aa0115f7acf45150","/index.html":"416d23813d17db0e5a241dd8e5596c606697c933272212530a717b1f85a7a577","/manifest.json":"4e1d3adad9ce7e17c0d13fac197f1c27091906f4ecf3909c9f51247bff345118","/favicon.ico":"1463be9bedc82e16f9364eec7a1f5152cbe56229401381eed65c1496cb884407","/static/css/main.ffc898cd.css.map":"60578fb12682c1ae4b8b4dbd69c979c62000c719ce6b8ad7f88c12beb339b3c2","/static/css/main.ffc898cd.css":"9930ee8105bf0a60dd1f7ecafaabf65da5dfc79740dc7b2c2af4c54a9d1587dc","/logo512.png":"2356e0b814e58a349935c8de17226873d615d088a867d591fef48a64c80c9a2f","/static/js/main.f7a3cae4.js.LICENSE.txt":"6c8bb575a075f03252d54ddff44fbcb02115cb0476c61542f20f9692494ecbe5","/codepen.png":"7b65b99f12656e11bbd13ce0e4c7ef22ed3a58a7a016a40bf147515c0c59fd22","/static/js/main.f7a3cae4.js":"489f3bae24dbc8eeed5786aae8f32362da5ce4a32a1fed97f68162097497308c","/static/js/main.f7a3cae4.js.map":"cccb5a85f70182776f6661c003d8a444edb0b15ff46d677970f5beae3237867a"}}
+[debug] [2024-11-24T18:21:11.909Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/1096754307149/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9:populateFiles 200
+[debug] [2024-11-24T18:21:11.909Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1096754307149/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9:populateFiles {"uploadRequiredHashes":["3d1977d9c6c59f069c6bb1aa61169f92b0f4ca99c7f7de7b9e76ab4d15d03d1b","416d23813d17db0e5a241dd8e5596c606697c933272212530a717b1f85a7a577","489f3bae24dbc8eeed5786aae8f32362da5ce4a32a1fed97f68162097497308c","cccb5a85f70182776f6661c003d8a444edb0b15ff46d677970f5beae3237867a"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files"}
+[debug] [2024-11-24T18:21:11.910Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:11.910Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:11.910Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:11.911Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:11.911Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:11.911Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:11.911Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:11.911Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:11.911Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/3d1977d9c6c59f069c6bb1aa61169f92b0f4ca99c7f7de7b9e76ab4d15d03d1b [none]
+[debug] [2024-11-24T18:21:11.911Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/3d1977d9c6c59f069c6bb1aa61169f92b0f4ca99c7f7de7b9e76ab4d15d03d1b [stream]
+[debug] [2024-11-24T18:21:11.912Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/416d23813d17db0e5a241dd8e5596c606697c933272212530a717b1f85a7a577 [none]
+[debug] [2024-11-24T18:21:11.912Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/416d23813d17db0e5a241dd8e5596c606697c933272212530a717b1f85a7a577 [stream]
+[debug] [2024-11-24T18:21:11.912Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/489f3bae24dbc8eeed5786aae8f32362da5ce4a32a1fed97f68162097497308c [none]
+[debug] [2024-11-24T18:21:11.912Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/489f3bae24dbc8eeed5786aae8f32362da5ce4a32a1fed97f68162097497308c [stream]
+[debug] [2024-11-24T18:21:11.912Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/cccb5a85f70182776f6661c003d8a444edb0b15ff46d677970f5beae3237867a [none]
+[debug] [2024-11-24T18:21:11.912Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/cccb5a85f70182776f6661c003d8a444edb0b15ff46d677970f5beae3237867a [stream]
+[debug] [2024-11-24T18:21:11.913Z] [hosting][populate queue][FINAL] {"max":1002,"min":1002,"avg":1002,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1004}
+[debug] [2024-11-24T18:21:11.913Z] [hosting] uploads queued: 4
+[debug] [2024-11-24T18:21:13.538Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/416d23813d17db0e5a241dd8e5596c606697c933272212530a717b1f85a7a577 200
+[debug] [2024-11-24T18:21:13.538Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/416d23813d17db0e5a241dd8e5596c606697c933272212530a717b1f85a7a577 [stream]
+[debug] [2024-11-24T18:21:13.546Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/3d1977d9c6c59f069c6bb1aa61169f92b0f4ca99c7f7de7b9e76ab4d15d03d1b 200
+[debug] [2024-11-24T18:21:13.547Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/3d1977d9c6c59f069c6bb1aa61169f92b0f4ca99c7f7de7b9e76ab4d15d03d1b [stream]
+[debug] [2024-11-24T18:21:13.957Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/489f3bae24dbc8eeed5786aae8f32362da5ce4a32a1fed97f68162097497308c 200
+[debug] [2024-11-24T18:21:13.957Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/489f3bae24dbc8eeed5786aae8f32362da5ce4a32a1fed97f68162097497308c [stream]
+[debug] [2024-11-24T18:21:15.990Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/cccb5a85f70182776f6661c003d8a444edb0b15ff46d677970f5beae3237867a 200
+[debug] [2024-11-24T18:21:15.991Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9/files/cccb5a85f70182776f6661c003d8a444edb0b15ff46d677970f5beae3237867a [stream]
+[debug] [2024-11-24T18:21:15.991Z] [hosting][upload queue][FINAL] {"max":4080,"min":1628,"avg":2348,"active":0,"complete":4,"success":4,"errored":0,"retried":0,"total":4,"elapsed":4082}
+[info] ✔  hosting[codepen-clone-2cbf1]: file upload complete 
+[debug] [2024-11-24T18:21:15.992Z] [hosting] deploy completed after 5518ms
+[debug] [2024-11-24T18:21:15.992Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "codepen-clone-2cbf1"
+    },
+    "version": "projects/1096754307149/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9"
+  }
+]
+[info] i  hosting[codepen-clone-2cbf1]: finalizing version... 
+[debug] [2024-11-24T18:21:15.994Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:15.994Z] Checked if tokens are valid: true, expires at: 1732473596290
+[debug] [2024-11-24T18:21:15.995Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9 updateMask=status%2Cconfig
+[debug] [2024-11-24T18:21:15.995Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/codepen-clone-2cbf1/versions/483c3b050d5e3be9 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
