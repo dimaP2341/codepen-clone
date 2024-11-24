@@ -16,24 +16,19 @@ export default function App() {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userCred) => {
       if (userCred) {
-        setDoc(doc(db, 'users', userCred?.uid), userCred.providerData[0])
-          .then(() => {
-            dispatch(SET_USER(userCred?.providerData[0]))
-            navigate('/home/projects', { replace: true })
-            setIsLoading(false)
-          })
-          .catch((error) => {
-            console.error('Error setting user data:', error)
-            setIsLoading(false)
-          })
+        setIsLoading(true)
+        setDoc(doc(db, 'users', userCred?.uid), userCred.providerData[0]).then(() => {
+          dispatch(SET_USER(userCred?.providerData[0]))
+          setIsLoading(false)
+          navigate('/home/projects', { replace: true })
+        })
       } else {
         setIsLoading(false)
         navigate('/home/auth', { replace: true })
       }
     })
-
     return () => unsubscribe()
-  }, [dispatch, navigate])
+  }, [])
 
   useEffect(() => {
     const projectQuery = query(collection(db, 'Projects'), orderBy('id', 'desc'))
@@ -43,16 +38,12 @@ export default function App() {
       (querySnapshot) => {
         const projectsList = querySnapshot.docs.map((doc) => doc.data())
         dispatch(SET_PROJECTS(projectsList))
-        setIsLoading(false)
       },
-      (error) => {
-        console.error('Error fetching projects:', error)
-        setIsLoading(false)
-      },
+      (error) => console.error('Error fetching projects:', error),
     )
 
     return unsubscribe
-  }, [dispatch])
+  }, [])
 
   return (
     <>
@@ -65,7 +56,7 @@ export default function App() {
           <Routes>
             <Route path="/home/*" element={<Home />} />
             <Route path="/newProject" element={<NewProject />} />
-            <Route path="*" element={<Navigate to={'/home'} />} />
+            <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
         </div>
       )}
